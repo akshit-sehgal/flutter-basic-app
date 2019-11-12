@@ -7,16 +7,16 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  MyAppState createState() {
-    return MyAppState();
+  _MyAppState createState() {
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  var questionIndex = 0;
-  void answerQuestion(int ans) {
+class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
+  void _answerQuestion(int ans) {
     setState(() {
-      questionIndex = 1;
+      _questionIndex = 1;
     });
   }
 
@@ -32,23 +32,23 @@ class MyAppState extends State<MyApp> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(questions[questionIndex]),
+          Text(questions[_questionIndex]),
           RaisedButton(
             child: Text('Answer 1'),
-            onPressed: () => answerQuestion(1),
+            onPressed: () => _answerQuestion(1),
           ),
           RaisedButton(
             child: Text('Answer 2'),
-            onPressed: () => answerQuestion(2),
+            onPressed: () => _answerQuestion(2),
           ),
           RaisedButton(
             child: Text('Answer 3'),
-            onPressed: () => answerQuestion(3),
+            onPressed: () => _answerQuestion(3),
           ),
           RaisedButton(
             child: Text('Answer 4'),
             onPressed: () {
-              answerQuestion(4);
+              _answerQuestion(4);
             },
           ),
         ],
